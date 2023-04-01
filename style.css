@@ -1,0 +1,72 @@
+body{
+    background-color: #0b1828;
+    min-width: 350px;
+}
+
+.hero-area{
+    background-image: url('image/pexels-dmitry-demidov-3784566.jpg');
+    min-height: 400px;
+    background-position: 50% 50%;
+    background-size: 100%;
+}
+
+.song-small:hover{
+    border: solid thin grey;
+    cursor: pointer;
+    transform: translateY(-10px);
+}
+
+.song-small{
+    background-color: #193353;
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(6,32,73,1) 43%, rgba(12,50,97,1) 67%, rgba(0,212,255,0.06796221906731448) 100%);
+    transition: all 0.3s ease;
+    text-decoration-line: none;
+}
+
+.song-small-img{
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+}
+
+.song-category-title::after{
+    content: '';
+    background-color: #2cc8e5;
+    height: 1px;
+    display: block;
+    margin-top: 15px;
+    width: 50%;
+    background: linear-gradient(90deg, rgba(2,0,36,0.5441526952577906) 0%, rgba(44,200,229,1) 45%, rgba(12,50,97,0.19681375968356096) 100%);
+}
+
+.song-category-title{
+    color: #2cc8e5;
+}
+
+.big-song-hover svg{
+    left: 50%; 
+    top: 50%; 
+    position:absolute; 
+    transform: translate(-50%,-50%);
+}
+
+.big-song-hover:hover{
+    opacity: 1;
+}
+
+.big-song-hover{
+    position: absolute; 
+    background-color: #000000bb; 
+    left: 0px; 
+    top: 0px; 
+    width: 200px; 
+    height: 200px;
+    opacity: 0;
+    transition: all .8s ease;
+}
+
+.big-song-img{
+    width: 200px; 
+    height: 200px; 
+    object-fit: cover;
+}
