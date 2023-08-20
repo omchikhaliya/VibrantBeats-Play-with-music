@@ -1,0 +1,68 @@
+<html>
+
+<head>
+    <title>Login/Registration</title>
+    <link rel="stylesheet" href="/static/login_style.css">
+    <!-- <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet"> -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Sofia&display=swap" rel="stylesheet">
+
+<body>
+    <div class="hero">
+        <div class="form-box">
+            <div class="button-box">
+                <div id="btn"></div>
+                <button type="button" class="toggle-btn" onclick ="login()">Login</button>
+                <button type="button" class="toggle-btn" onclick="register()">Register</button>
+
+            </div>
+            <div class="social-icons">
+                <img src="/static/login_img/fb.png">
+                <img src="/static/login_img/gp.png">
+                <img src="/static/login_img/tw.png">
+            </div>
+            <form id="login" action="{% url 'login'%}" class="input-group" method="POST">
+                {%csrf_token%}
+                <input type="email" class="input-field" name="email" placeholder="Enter Username" required>
+                <input type="password" class="input-field" name="password" placeholder="Enter Password" required>
+                <input type="checkbox" class="check-box" name="checkbox"><span>Remember Password</span>
+                <button type="submit" class="submit-btn">Login</button>
+                <div>{{msg}}</div>
+            </form>
+
+            <form id="register" action="{% url 'register'%}" class="input-group" method="post">
+                {%csrf_token%}
+                <!-- <input type="text" class="input-field" name="username" placeholder="User Id" required> -->
+                <input type="text" class="input-field" name="name" placeholder="Enter Your Name" required>
+                <input type="email" class="input-field" name="email" placeholder="Enter Your email" required>
+                <input type="password" class="input-field" name="password" placeholder="Enter Password" required>
+                <input type="file" class="input-field" name="profile" required>
+                {% comment %} <input type="checkbox" class="check-box" name="checkbox"><span>I agree to Terms and Conditions.</span> {% endcomment %}
+                <button type="submit" class="submit-btn">Register</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        var x= document.getElementById('login');
+        var y= document.getElementById('register');
+        var z= document.getElementById('btn');
+
+        function register(){
+            x.style.left="-400px";
+            y.style.left="50px";
+            z.style.left="110px";
+        }
+
+        function login(){
+            x.style.left="50px";
+            y.style.left="450px";
+            z.style.left="0";
+        }
+
+
+    </script>
+
+</body>
+
+</html>
